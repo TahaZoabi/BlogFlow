@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import { SearchInput } from '@/components/ui/search_input'
+</script>
+
+<template>
+  <div class="relative flex items-center max-w-[1100px] mx-auto p-2 bg-background">
+    <h3
+      class="text-2xl sm:text-3xl md:text-4xl text-primary font-semibold select-none hover:text-primary cursor-pointer"
+    >
+      BlogFlow
+    </h3>
+    <nav class="absolute left-1/2 transform -translate-x-1/2">
+      <ul class="md:flex justify-center items-center gap-5 hidden">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <SearchInput class="w-1/3 md:w-1/4 ml-auto" />
+  </div>
+</template>
