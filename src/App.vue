@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
 import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 <template>
   <Navbar />
@@ -10,4 +11,5 @@ import Navbar from '@/components/Navbar.vue'
     <h1 class="text-primary text-4xl font-semibold">Hello World</h1>
     <Button class="bg-secondary hover:bg-secondary-dark">Welcome</Button>
   </div>
+  <Footer />
 </template>
