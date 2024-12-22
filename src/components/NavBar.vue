@@ -3,7 +3,7 @@ import { SearchInput } from '@/components/ui/search_input'
 </script>
 
 <template>
-  <div class="relative flex items-center max-w-[1100px] mx-auto p-2 bg-background">
+  <div class="relative flex items-center">
     <h3
       class="text-2xl sm:text-3xl md:text-4xl text-primary font-semibold select-none hover:text-primary cursor-pointer"
     >

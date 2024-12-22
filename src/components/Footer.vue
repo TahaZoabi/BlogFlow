@@ -4,7 +4,7 @@ const year = time.getFullYear()
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center gap-4 bg-background mx-auto max-w-[1100px]">
+  <div class="flex flex-col items-center justify-center gap-4">
     <ul class="flex justify-center items-center gap-5">
       <li>About</li>
       <li>Privacy Policy</li>

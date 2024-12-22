@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main>
-    <h2>Home Page</h2>
-  </main>
+  <section>
+    <h2>Contact Page</h2>
+  </section>
 </template>
