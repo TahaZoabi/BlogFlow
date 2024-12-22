@@ -13,18 +13,22 @@ const navLinks = [
 </script>
 
 <template>
-  <div class="relative flex items-center gap-4">
+  <div class="relative flex items-center gap-5">
     <h3
       class="text-2xl sm:text-3xl md:text-4xl text-primary font-semibold select-none hover:text-primary cursor-pointer"
     >
-      BlogFlow
+      <RouterLink to="/"> BlogFlow</RouterLink>
     </h3>
 
     <!-- Desktop Navigation -->
     <nav class="absolute left-1/2 transform -translate-x-1/2">
       <ul class="md:flex justify-center items-center gap-5 hidden">
         <li v-for="({ text, path }, index) in navLinks" :key="index">
-          <RouterLink :to="path">{{ text }}</RouterLink>
+          <RouterLink
+            class="text-foreground hover:text-primary transition-colors duration-300"
+            :to="path"
+            >{{ text }}</RouterLink
+          >
         </li>
       </ul>
     </nav>
@@ -49,7 +53,11 @@ const navLinks = [
         <!-- Navigation Links -->
         <ul class="flex flex-col justify-center items-center gap-5">
           <li v-for="({ text, path }, index) in navLinks" :key="index">
-            <RouterLink :to="path">{{ text }}</RouterLink>
+            <RouterLink
+              class="text-foreground hover:text-primary transition-colors duration-300"
+              :to="path"
+              >{{ text }}</RouterLink
+            >
           </li>
         </ul>
       </SheetContent>
