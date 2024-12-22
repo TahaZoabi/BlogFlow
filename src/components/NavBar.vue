@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { SearchInput } from '@/components/ui/search_input'
-import { Menu, CircleX } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { Menu } from 'lucide-vue-next'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { DialogTitle, DialogDescription } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+
 const navLinks = [
   { text: 'Home', path: '/' },
   { text: 'About', path: '/about' },
   { text: 'Contact', path: '/contact' },
 ]
-const isOpen = ref(false)
-
-const toggleSheet = () => {
-  isOpen.value = !isOpen.value
-  console.log('i clicked it!!!!', isOpen.value)
-}
 </script>
 
 <template>
@@ -22,6 +19,8 @@ const toggleSheet = () => {
     >
       BlogFlow
     </h3>
+
+    <!-- Desktop Navigation -->
     <nav class="absolute left-1/2 transform -translate-x-1/2">
       <ul class="md:flex justify-center items-center gap-5 hidden">
         <li v-for="({ text, path }, index) in navLinks" :key="index">
@@ -29,24 +28,31 @@ const toggleSheet = () => {
         </li>
       </ul>
     </nav>
-    <SearchInput class="w-1/2 md:w-1/3 lg:w-1/4 ml-auto" />
-    <Menu class="md:hidden cursor-pointer" @click="toggleSheet" />
-    <div
-      class="md:hidden flex flex-col justify-center items-center mt-10 md:hidden w-1/4 bg-green-500 p-3"
-    >
-      <Sheet :isOpen="isOpen">
-        <SheetClose as-child>
-          <CircleX class="absolute top-2 right-2 cursor-pointer" @click="toggleSheet" />
-        </SheetClose>
 
-        <SheetContent class="max-w-[400px] md:hidden">
-          <ul class="flex flex-col justify-center items-center gap-5 md:hidden">
-            <li v-for="({ text, path }, index) in navLinks" :key="index">
-              <RouterLink :to="path">{{ text }}</RouterLink>
-            </li>
-          </ul>
-        </SheetContent>
-      </Sheet>
-    </div>
+    <!-- Search Input -->
+    <SearchInput class="w-1/2 md:w-1/3 lg:w-1/4 ml-auto" />
+
+    <!-- Mobile Navigation -->
+    <Sheet>
+      <SheetTrigger>
+        <Button variant="ghost" class="md:hidden cursor-pointer">
+          <Menu />
+        </Button>
+      </SheetTrigger>
+
+      <SheetContent class="max-w-[400px] md:hidden">
+        <!-- DialogTitle -->
+        <DialogTitle></DialogTitle>
+        <!-- DialogDescription -->
+        <DialogDescription> </DialogDescription>
+
+        <!-- Navigation Links -->
+        <ul class="flex flex-col justify-center items-center gap-5">
+          <li v-for="({ text, path }, index) in navLinks" :key="index">
+            <RouterLink :to="path">{{ text }}</RouterLink>
+          </li>
+        </ul>
+      </SheetContent>
+    </Sheet>
   </div>
 </template>

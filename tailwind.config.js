@@ -1,16 +1,8 @@
+import tailwindcssAnimate from 'tailwindcss-animate'
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ['class'], // Enabling dark mode using a class
-  safelist: ['dark'], // Safe for dark mode
-  prefix: '',
-
-  content: [
-    './pages/**/*.{ts,tsx,vue}',
-    './components/**/*.{ts,tsx,vue}',
-    './app/**/*.{ts,tsx,vue}',
-    './src/**/*.{ts,tsx,vue}',
-  ],
-
+export default {
+  content: ['./index.html', './src/**/*.{ts,tsx,js,jsx,vue}'],
   theme: {
     container: {
       center: true,
@@ -24,29 +16,46 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))', // cream
-        foreground: 'hsl(var(--foreground))', // charcoal gray text
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: 'hsl(210, 100%, 40%)', // deep blue
-          foreground: 'hsl(0, 0%, 100%)', // white text on blue
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+          50: 'hsl(var(--primary-50))',
+          100: 'hsl(var(--primary-100))',
+          200: 'hsl(var(--primary-200))',
+          300: 'hsl(var(--primary-300))',
+          400: 'hsl(var(--primary-400))',
+          500: 'hsl(var(--primary-500))',
+          600: 'hsl(var(--primary-600))',
+          700: 'hsl(var(--primary-700))',
+          800: 'hsl(var(--primary-800))',
+          900: 'hsl(var(--primary-900))',
+          950: 'hsl(var(--primary-950))',
         },
         secondary: {
-          DEFAULT: 'hsl(180, 40%, 45%)', // muted teal
-          foreground: 'hsl(0, 0%, 100%)', // white text on teal
-        },
-        accent: {
-          DEFAULT: 'hsl(45, 80%, 60%)', // warm mustard
-          foreground: 'hsl(0, 0%, 100%)', // white text on mustard
-        },
-        background: 'hsl(40, 20%, 97%)', // cream background
-        foreground: 'hsl(0, 0%, 20%)', // charcoal gray text
-        muted: {
-          DEFAULT: 'hsl(0, 0%, 80%)', // light gray for muted text
-          foreground: 'hsl(0, 0%, 100%)', // white text on muted background
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
-          DEFAULT: 'hsl(0, 80%, 50%)', // deep coral (for destructive actions)
-          foreground: 'hsl(0, 0%, 100%)', // white text on coral
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
       },
       borderRadius: {
@@ -64,11 +73,22 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        'collapsible-down': {
+          from: { height: 0 },
+          to: { height: 'var(--radix-collapsible-content-height)' },
+        },
+        'collapsible-up': {
+          from: { height: 'var(--radix-collapsible-content-height)' },
+          to: { height: 0 },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'collapsible-down': 'collapsible-down 0.2s ease-in-out',
+        'collapsible-up': 'collapsible-up 0.2s ease-in-out',
       },
     },
   },
+  plugins: [tailwindcssAnimate],
 }
