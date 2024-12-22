@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { SearchInput } from '@/components/ui/search_input'
+const navLinks = [
+  { text: 'Home', path: '/' },
+  { text: 'About', path: '/about' },
+  { text: 'Contact', path: '/contact' },
+]
 </script>
 
 <template>
@@ -11,9 +16,9 @@ import { SearchInput } from '@/components/ui/search_input'
     </h3>
     <nav class="absolute left-1/2 transform -translate-x-1/2">
       <ul class="md:flex justify-center items-center gap-5 hidden">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li v-for="({ text, path }, index) in navLinks" :key="index">
+          <RouterLink :to="path">{{ text }}</RouterLink>
+        </li>
       </ul>
     </nav>
     <SearchInput class="w-1/3 md:w-1/4 ml-auto" />
