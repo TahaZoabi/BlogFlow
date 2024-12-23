@@ -5,6 +5,18 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { Icon } from '@iconify/vue'
+import { useColorMode } from '@vueuse/core'
+
+// Pass { disableTransition: false } to enable transitions
+const mode = useColorMode()
+
 const navLinks = [
   { text: 'Home', path: '/' },
   { text: 'About', path: '/about' },
@@ -13,7 +25,7 @@ const navLinks = [
 </script>
 
 <template>
-  <div class="relative flex items-center gap-5">
+  <div class="relative flex items-center justify-evenly gap-4">
     <h3
       class="text-2xl sm:text-3xl md:text-4xl text-primary font-semibold select-none hover:text-primary cursor-pointer"
     >
@@ -34,7 +46,29 @@ const navLinks = [
     </nav>
 
     <!-- Search Input -->
-    <SearchInput class="w-1/2 md:w-1/3 lg:w-1/4 ml-auto" />
+    <SearchInput class="w-1/2 md:w-1/4 ml-auto" />
+
+    <!--    Dark Mode-->
+    <DropdownMenu>
+      <DropdownMenuTrigger as-child>
+        <Button variant="outline">
+          <Icon
+            icon="radix-icons:moon"
+            class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+          />
+          <Icon
+            icon="radix-icons:sun"
+            class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+          />
+          <span class="sr-only">Toggle theme</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem @click="mode = 'light'"> Light </DropdownMenuItem>
+        <DropdownMenuItem @click="mode = 'dark'"> Dark </DropdownMenuItem>
+        <DropdownMenuItem @click="mode = 'auto'"> System </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
 
     <!-- Mobile Navigation -->
     <Sheet>
