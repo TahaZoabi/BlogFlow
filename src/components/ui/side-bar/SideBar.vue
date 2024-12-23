@@ -25,11 +25,11 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next'
       <div>
         <h5 class="text-xl mb-2">Social Media:</h5>
         <ul class="flex gap-3 p-2 justify-start items-center">
-          <li class="hover:text-primary">
+          <li class="hover:text-primary cursor-pointer">
             <a href="mailto:range.dev7@gmail.com"><Mail /></a>
           </li>
-          <li class="hover:text-primary"><Github /></li>
-          <li class="hover:text-primary"><Linkedin /></li>
+          <li class="hover:text-primary cursor-pointer"><Github /></li>
+          <li class="hover:text-primary cursor-pointer"><Linkedin /></li>
         </ul>
       </div>
     </div>
