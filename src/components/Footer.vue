@@ -5,6 +5,6 @@ const year = time.getFullYear()
 
 <template>
   <footer class="flex flex-col items-center justify-center gap-4">
-    <h5>© {{ year }} Taha Zoabi. All rights reserved.</h5>
+    <h5 class="text-md sm:text-lg">&copy; {{ year }} Taha Zoabi. All Rights Reserved.</h5>
   </footer>
 </template>
