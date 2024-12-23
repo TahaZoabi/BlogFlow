@@ -25,7 +25,7 @@ const navLinks = [
 </script>
 
 <template>
-  <div class="relative flex items-center justify-evenly gap-4">
+  <section class="flex items-center justify-between gap-4">
     <h3
       class="text-2xl sm:text-3xl md:text-4xl text-primary font-semibold select-none hover:text-primary cursor-pointer"
     >
@@ -73,7 +73,7 @@ const navLinks = [
     <!-- Mobile Navigation -->
     <Sheet>
       <SheetTrigger>
-        <Button variant="ghost" class="md:hidden cursor-pointer">
+        <Button variant="outline" class="md:hidden cursor-pointer">
           <Menu />
         </Button>
       </SheetTrigger>
@@ -96,5 +96,5 @@ const navLinks = [
         </ul>
       </SheetContent>
     </Sheet>
-  </div>
+  </section>
 </template>
