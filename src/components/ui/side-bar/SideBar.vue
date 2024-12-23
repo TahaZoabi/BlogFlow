@@ -28,8 +28,12 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next'
           <li class="hover:text-primary cursor-pointer">
             <a href="mailto:range.dev7@gmail.com"><Mail /></a>
           </li>
-          <li class="hover:text-primary cursor-pointer"><Github /></li>
-          <li class="hover:text-primary cursor-pointer"><Linkedin /></li>
+          <li class="hover:text-primary cursor-pointer">
+            <a target="_blank" href="https://github.com/TahaZoabi"><Github /></a>
+          </li>
+          <li class="hover:text-primary cursor-pointer">
+            <a target="_blank" href="https://www.linkedin.com/in/tahazoabi/"><Linkedin /></a>
+          </li>
         </ul>
       </div>
     </div>
