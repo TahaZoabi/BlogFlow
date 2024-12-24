@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { Github, Linkedin, Mail } from 'lucide-vue-next'
+import { Checkbox } from '@/components/ui/checkbox'
+const categories = ['Tech', 'Tools', 'Tutorials']
 </script>
 
 <template>
@@ -9,9 +11,17 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next'
       <div>
         <h5 class="text-xl mb-2">Categories:</h5>
         <ul class="flex flex-col gap-3 p-2 justify-center">
-          <li>Tech</li>
-          <li>Tools</li>
-          <li>Tutorials</li>
+          <li v-for="category in categories" :key="category">
+            <div class="flex items-center space-x-2">
+              <Checkbox :id="category" />
+              <Label
+                :for="category"
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                {{ category }}
+              </Label>
+            </div>
+          </li>
         </ul>
       </div>
       <div>
