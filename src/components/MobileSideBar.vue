@@ -9,7 +9,7 @@ const SHEET_SIDES = ['left'] as const
 
 <template>
   <!-- Mobile Navigation -->
-  <section class="md:hidden mt-7">
+  <section class="md:hidden mt-4">
     <Sheet v-for="side in SHEET_SIDES" :key="side">
       <SheetTrigger as-child>
         <Button variant="outline"> SideBar </Button>
