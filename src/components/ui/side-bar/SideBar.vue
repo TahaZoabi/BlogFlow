@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next'
 </script>
 
 <template>
-  <div class="hidden md:block w-1/4">
+  <div class="md:block w-1/4">
     <!-- Sidebar -->
     <div class="flex flex-col h-full p-4 gap-20">
       <div>
