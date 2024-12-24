@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { SideBar } from '@/components/ui/side-bar'
 import MobileSideBar from '@/components/MobileSideBar.vue'
+import BlogPost from '@/components/BlogPost.vue'
 </script>
 
 <template>
@@ -12,6 +13,9 @@ import MobileSideBar from '@/components/MobileSideBar.vue'
     <main class="flex-grow p-4">
       <h1 class="text-2xl font-semibold">Welcome to the Homepage</h1>
       <p>This is the main content area.</p>
+      <div>
+        <BlogPost />
+      </div>
     </main>
   </div>
 </template>
