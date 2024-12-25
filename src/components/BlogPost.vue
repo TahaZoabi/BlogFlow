@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
-const tags = ['Tech', 'Tools', 'Categories']
 import {
   Card,
   CardContent,
@@ -9,14 +8,23 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { type BlogPostType } from '@/lib/posts.ts'
+import type { PropType } from 'vue'
+
+const props = defineProps({
+  post: {
+    type: Object as PropType<BlogPostType>,
+    required: true,
+  },
+})
 </script>
 
 <template>
   <Card class="max-w-[350px] shadow-md rounded-lg overflow-hidden">
     <!-- Card Header with Title -->
     <CardHeader class="p-3 border-b">
-      <CardTitle class="text-xl font-semibold text-primary">Post Title</CardTitle>
-      <CardDescription class="text-sm">Posted on January 1, 2024</CardDescription>
+      <CardTitle class="text-xl font-semibold text-primary">{{ props.post.title }} </CardTitle>
+      <CardDescription class="text-sm">Posted on {{ props.post.created_at }}</CardDescription>
     </CardHeader>
 
     <!-- Card Content with Image and Description -->
@@ -24,7 +32,7 @@ import {
       <div class="mb-4">
         <!-- Post Image -->
         <img
-          src="../../public/blog1.png"
+          :src="props.post.img"
           alt="Blog Post Image"
           class="w-[85%] h-auto rounded-lg mx-auto"
         />
@@ -32,8 +40,7 @@ import {
       <div>
         <!-- Short Description -->
         <p class="text-sm">
-          This is a short description of the blog post. It provides a brief overview of the content,
-          enticing the reader to click through and read more.
+          {{ props.post.description.slice(0, 150) + '...' }}
         </p>
       </div>
     </CardContent>
