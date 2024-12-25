@@ -36,7 +36,7 @@ defineProps({
       <div>
         <!-- Short Description -->
         <p class="text-sm">
-          {{ post.description.slice(0, 150) + '...' }}
+          {{ post.intro.slice(0, 150) + '...' }}
         </p>
       </div>
     </CardContent>

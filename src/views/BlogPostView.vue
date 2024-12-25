@@ -20,10 +20,30 @@ onMounted(() => {
 
 <template>
   <div v-if="post" class="flex flex-col gap-5 items-center justify-center p-4">
-    <h2 class="text-xl font-semibold text-primary">{{ post.title }}</h2>
-    <p class="text-sm text-muted-foreground">Posted on {{ post.created_at }}</p>
-    <img :src="post.img" :alt="post.title" class="w-1/3" />
-    <p>{{ post.description }}</p>
+    <!-- Title and Date -->
+    <h2 class="text-4xl font-bold text-primary">{{ post.title }}</h2>
+    <p class="text-sm text-muted-foreground mb-4">Posted on {{ post.created_at }}</p>
+
+    <!-- Featured Image -->
+    <img :src="post.img" alt="Blog Image" class="w-1/3 rounded mb-6" />
+
+    <!-- Intro -->
+    <div>
+      <h3 class="text-2xl font-semibold mb-3 text-muted-foreground">Introduction</h3>
+      <p class="mb-6">{{ post.intro }}</p>
+    </div>
+
+    <!-- Sections -->
+    <div v-for="(section, index) in post.sections" :key="index" class="mb-6">
+      <h3 class="text-2xl font-semibold mb-3 text-muted-foreground">{{ section.title }}</h3>
+      <p>{{ section.content }}</p>
+    </div>
+
+    <!-- Conclusion -->
+    <div>
+      <h3 class="text-2xl font-semibold mb-3 text-muted-foreground">Conclusion</h3>
+      <p class="mt-6">{{ post.conclusion }}</p>
+    </div>
   </div>
   <div v-else>
     <p>Post not found.</p>
