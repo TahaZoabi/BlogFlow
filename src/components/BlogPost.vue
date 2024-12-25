@@ -23,7 +23,7 @@ defineProps({
   <Card class="max-w-[350px] shadow-md rounded-lg overflow-hidden">
     <!-- Card Header with Title -->
     <CardHeader class="p-3 border-b">
-      <CardTitle class="text-xl font-semibold text-primary">{{ post.title }} </CardTitle>
+      <CardTitle class="text-xl font-semibold text-primary">{{ post.title }}</CardTitle>
       <CardDescription class="text-sm">Posted on {{ post.created_at }}</CardDescription>
     </CardHeader>
 
@@ -43,7 +43,9 @@ defineProps({
 
     <!-- Card Footer with Read More Button -->
     <CardFooter class="p-4">
-      <Button class="w-full">Read More</Button>
+      <Button class="w-full">
+        <RouterLink :to="`/posts/${post.id}`">Read More</RouterLink>
+      </Button>
     </CardFooter>
   </Card>
 </template>
