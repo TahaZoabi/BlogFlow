@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
-
+const tags = ['Tech', 'Tools', 'Categories']
 import {
   Card,
   CardContent,
@@ -12,9 +12,9 @@ import {
 </script>
 
 <template>
-  <Card class="max-w-[300px] shadow-md rounded-lg overflow-hidden">
+  <Card class="max-w-[350px] shadow-md rounded-lg overflow-hidden">
     <!-- Card Header with Title -->
-    <CardHeader class="p-4 border-b">
+    <CardHeader class="p-3 border-b">
       <CardTitle class="text-xl font-semibold text-primary">Post Title</CardTitle>
       <CardDescription class="text-sm">Posted on January 1, 2024</CardDescription>
     </CardHeader>
@@ -23,11 +23,15 @@ import {
     <CardContent class="p-4">
       <div class="mb-4">
         <!-- Post Image -->
-        <img src="../../public/blog1.png" alt="Blog Post Image" class="w-full h-auto rounded-lg" />
+        <img
+          src="../../public/blog1.png"
+          alt="Blog Post Image"
+          class="w-[85%] h-auto rounded-lg mx-auto"
+        />
       </div>
       <div>
         <!-- Short Description -->
-        <p class="text-sm mb-4">
+        <p class="text-sm">
           This is a short description of the blog post. It provides a brief overview of the content,
           enticing the reader to click through and read more.
         </p>
