@@ -11,7 +11,7 @@ import {
 import { type BlogPostType } from '@/lib/posts.ts'
 import type { PropType } from 'vue'
 
-const props = defineProps({
+defineProps({
   post: {
     type: Object as PropType<BlogPostType>,
     required: true,
@@ -23,24 +23,20 @@ const props = defineProps({
   <Card class="max-w-[350px] shadow-md rounded-lg overflow-hidden">
     <!-- Card Header with Title -->
     <CardHeader class="p-3 border-b">
-      <CardTitle class="text-xl font-semibold text-primary">{{ props.post.title }} </CardTitle>
-      <CardDescription class="text-sm">Posted on {{ props.post.created_at }}</CardDescription>
+      <CardTitle class="text-xl font-semibold text-primary">{{ post.title }} </CardTitle>
+      <CardDescription class="text-sm">Posted on {{ post.created_at }}</CardDescription>
     </CardHeader>
 
     <!-- Card Content with Image and Description -->
     <CardContent class="p-4">
       <div class="mb-4">
         <!-- Post Image -->
-        <img
-          :src="props.post.img"
-          alt="Blog Post Image"
-          class="w-[85%] h-auto rounded-lg mx-auto"
-        />
+        <img :src="post.img" alt="Blog Post Image" class="w-[85%] h-auto rounded-lg mx-auto" />
       </div>
       <div>
         <!-- Short Description -->
         <p class="text-sm">
-          {{ props.post.description.slice(0, 150) + '...' }}
+          {{ post.description.slice(0, 150) + '...' }}
         </p>
       </div>
     </CardContent>
