@@ -2,6 +2,7 @@
 import { Github, Linkedin, Mail } from 'lucide-vue-next'
 import { Checkbox } from '@/components/ui/checkbox'
 const categories = ['Tech', 'Tools', 'Tutorials']
+import { BlogPosts } from '@/lib/posts'
 </script>
 
 <template>
@@ -26,10 +27,14 @@ const categories = ['Tech', 'Tools', 'Tutorials']
       </div>
       <div>
         <h5 class="text-xl mb-2">Recent Posts:</h5>
-        <ul class="flex flex-col gap-3 p-2 justify-center">
-          <li>Title One</li>
-          <li>Title Two</li>
-          <li>Title Three</li>
+        <ul class="flex flex-col gap-3 p-2 justify-center list-disc list-outside">
+          <li
+            class="text-sm hover:text-primary"
+            v-for="post in BlogPosts.slice(0, 3).reverse()"
+            :key="post.id"
+          >
+            <RouterLink :to="`/posts/${post.id}`">{{ post.title }}</RouterLink>
+          </li>
         </ul>
       </div>
       <div>
