@@ -12,8 +12,11 @@ import BlogPost from '@/components/BlogPost.vue'
     <MobileSideBar />
     <!-- Main Content -->
     <main class="flex-grow p-4">
-      <h1 class="text-2xl font-semibold">Welcome to the Homepage</h1>
-      <p>This is the main content area.</p>
+      <h1 class="text-2xl font-semibold">Discover the Latest Stories</h1>
+      <p class="text-sm text-muted-foreground">
+        Welcome to our blog! We share thoughtful posts on Web Development, including everything from
+        expert advice to personal stories. Check out our latest articles below!
+      </p>
       <div
         v-for="post in BlogPosts"
         :key="post.id"
