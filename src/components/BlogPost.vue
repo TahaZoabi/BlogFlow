@@ -20,7 +20,7 @@ defineProps({
 </script>
 
 <template>
-  <Card class="max-w-[350px] shadow-md rounded-lg overflow-hidden">
+  <Card class="max-w-[350px] shadow-md rounded-lg overflow-hidden flex flex-col h-full">
     <!-- Card Header with Title -->
     <CardHeader class="p-3 border-b">
       <CardTitle class="text-xl font-semibold text-primary">{{ post.title }}</CardTitle>
@@ -28,10 +28,14 @@ defineProps({
     </CardHeader>
 
     <!-- Card Content with Image and Description -->
-    <CardContent class="p-4">
+    <CardContent class="p-4 flex-1">
       <div class="mb-4">
         <!-- Post Image -->
-        <img :src="post.img" alt="Blog Post Image" class="w-[85%] h-auto rounded-lg mx-auto" />
+        <img
+          :src="post.img"
+          alt="Blog Post Image"
+          class="w-[85%] h-48 object-cover rounded-lg mx-auto"
+        />
       </div>
       <div>
         <!-- Short Description -->
