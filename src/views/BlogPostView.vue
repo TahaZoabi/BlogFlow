@@ -4,6 +4,7 @@ import { ref, onMounted } from 'vue'
 import { BlogPosts } from '@/lib/posts'
 
 import { type BlogPostType } from '@/lib/posts.ts'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 // Use route hook to access the route params
 const route = useRoute()
@@ -46,6 +47,6 @@ onMounted(() => {
     </div>
   </div>
   <div v-else>
-    <p>Post not found.</p>
+    <NotFoundView />
   </div>
 </template>
