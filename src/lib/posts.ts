@@ -12,7 +12,7 @@ export const BlogPosts: BlogPostType[] = [
   {
     id: 1,
     title: 'Welcome to My Coding Blog',
-    created_at: new Date().toLocaleDateString('en-GB'),
+    created_at: '25/12/2024',
     img: '../public/web-dev.png',
     intro:
       'Welcome to my blog! 🎉 This is the beginning of an exciting journey where I share my experiences, challenges, and learning as a new programmer diving into the world of Web Development. My goal is to document my progress, write about topics that fascinate me, and hopefully inspire others who are on a similar path.',
@@ -39,7 +39,7 @@ export const BlogPosts: BlogPostType[] = [
   {
     id: 2,
     title: 'Overcoming Challenges in Learning to Code',
-    created_at: new Date().toLocaleDateString('en-GB'),
+    created_at: '26/12/2024',
     img: '../public/learn-to-code.webp',
     intro:
       'Learning to code is a rewarding but challenging journey. In this post, I’ll share some of the struggles I’ve faced as a new programmer and the strategies I’ve used to overcome them. Whether you’re just starting out or looking for ways to push through a tough coding problem, I hope you’ll find something helpful here.',
