@@ -2,6 +2,7 @@
 import store from '@/store/store.ts'
 import { BlogPosts } from '@/lib/posts'
 import { Checkbox } from '@/components/ui/checkbox'
+import { Mail, Github, Linkedin } from 'lucide-vue-next'
 
 const { categories, toggleCategory, selectedCategories } = store
 </script>
