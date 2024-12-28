@@ -1,7 +1,7 @@
 // src/store.ts
 import { ref, computed } from 'vue'
 import { BlogPosts } from '@/lib/posts'
-const categories = ['Tutorials', 'Tech', 'Programming']
+const categories = ['Tutorials', 'Technology', 'Programming']
 const selectedCategories = ref<string[]>([]) // Shared selected categories
 const posts = ref(BlogPosts) // All posts
 
