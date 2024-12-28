@@ -43,6 +43,12 @@ defineProps({
           {{ post.intro.slice(0, 150) + '...' }}
         </p>
       </div>
+      <!-- Category Badge -->
+      <div class="mt-4">
+        <span class="bg-primary text-xs font-medium px-3 py-1 rounded-full shadow-sm">
+          {{ post.category }}
+        </span>
+      </div>
     </CardContent>
 
     <!-- Card Footer with Read More Button -->
