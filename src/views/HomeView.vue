@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import store from '@/store/store.ts'
 import { SideBar } from '@/components/ui/side-bar'
 import MobileSideBar from '@/components/MobileSideBar.vue'
-import { BlogPosts } from '../lib/posts.ts'
 import BlogPost from '@/components/BlogPost.vue'
+const { filteredPosts } = store
 </script>
 
 <template>
@@ -18,7 +19,7 @@ import BlogPost from '@/components/BlogPost.vue'
         expert advice to personal stories. Check out our latest articles below!
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 my-4 gap-8">
-        <div v-for="post in BlogPosts" :key="post.id">
+        <div v-for="post in filteredPosts" :key="post.id">
           <BlogPost :post="post" />
         </div>
       </div>

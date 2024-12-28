@@ -6,6 +6,7 @@ export interface BlogPostType {
   intro: string
   sections: { title: string; content: string }[] // For multiple sections
   conclusion: string
+  category: string
 }
 
 export const BlogPosts: BlogPostType[] = [
@@ -35,6 +36,7 @@ export const BlogPosts: BlogPostType[] = [
     ],
     conclusion:
       'Thank you for stopping by and being part of my journey. I’d love to hear from you, so feel free to ask questions. Let’s learn and grow together! Stay tuned for my next post.',
+    category: 'Tutorials',
   },
   {
     id: 2,
@@ -67,5 +69,6 @@ export const BlogPosts: BlogPostType[] = [
     ],
     conclusion:
       'Learning to code has been one of the most challenging and rewarding experiences of my life. The key is to embrace the journey, stay curious, and remember that every developer starts somewhere. I hope this post inspires you to keep going, even when it feels tough. Thank you for reading, and I’d love to hear about your own experiences and challenges with coding!',
+    category: 'Programming',
   },
 ]
