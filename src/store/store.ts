@@ -22,9 +22,32 @@ const toggleCategory = (category: string) => {
   }
 }
 
+const searchQuery = ref('') // Holds the search input
+const isDropdownVisible = ref(false) // Controls visibility of the dropdown
+
+// Filter posts based on the search query
+const filteredResults = computed(() => {
+  if (!searchQuery.value.trim()) return [] // If no input, return empty
+  return BlogPosts.filter((post) =>
+    post.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
+  )
+})
+
+// Show or hide the dropdown based on input focus or blur
+const handleFocus = () => (isDropdownVisible.value = true)
+const handleBlur = () => {
+  // Delay to ensure a click on the dropdown doesn't immediately hide it
+  setTimeout(() => (isDropdownVisible.value = false), 200)
+}
+
 export default {
   categories,
   selectedCategories,
   filteredPosts,
   toggleCategory,
+  filteredResults,
+  handleBlur,
+  handleFocus,
+  searchQuery,
+  isDropdownVisible,
 }
