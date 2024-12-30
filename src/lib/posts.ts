@@ -14,7 +14,7 @@ export const BlogPosts: BlogPostType[] = [
     id: 1,
     title: 'Welcome to My Coding Blog',
     created_at: '25/12/2024',
-    img: '../public/web-dev.png',
+    img: '/web-dev.png',
     intro:
       'Welcome to my blog! 🎉 This is the beginning of an exciting journey where I share my experiences, challenges, and learning as a new programmer diving into the world of Web Development. My goal is to document my progress, write about topics that fascinate me, and hopefully inspire others who are on a similar path.',
     sections: [
@@ -42,7 +42,7 @@ export const BlogPosts: BlogPostType[] = [
     id: 2,
     title: ' Learning to Code',
     created_at: '26/12/2024',
-    img: '../public/learn-to-code.png',
+    img: '/learn-to-code.png',
     intro:
       'Learning to code is a rewarding but challenging journey. In this post, I’ll share some of the struggles I’ve faced as a new programmer and the strategies I’ve used to overcome them. Whether you’re just starting out or looking for ways to push through a tough coding problem, I hope you’ll find something helpful here.',
     sections: [
@@ -75,7 +75,7 @@ export const BlogPosts: BlogPostType[] = [
     id: 3,
     title: 'The Power of JetBrains IDEs',
     created_at: '28/12/2024',
-    img: '../public/jetbrains.png',
+    img: '/jetbrains.png',
     intro:
       'As a developer, choosing the right Integrated Development Environment (IDE) is crucial to streamline your workflow and improve productivity. In this post, I want to talk about why I prefer JetBrains IDEs over other popular options like Visual Studio Code (VSCode), and how they’ve become my go-to tools for development.',
     sections: [
