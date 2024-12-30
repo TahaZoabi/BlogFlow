@@ -11,34 +11,35 @@ const basicRoutes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView,
+    component: HomeView
   },
   {
     path: '/about',
     name: 'about',
-    component: AboutView,
+    component: AboutView
   },
   {
     path: '/contact',
     name: 'contact',
-    component: ContactView,
+    component: ContactView
   },
-  ,
   {
     path: '/posts/:id',
     name: 'blog-post',
-    component: BlogPostView,
+    component: BlogPostView
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
-    component: NotFoundView,
-  },
+    component: NotFoundView
+  }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: basicRoutes as RouteRecordRaw[],
+  routes: basicRoutes as RouteRecordRaw[]
 })
 
+
 export default router
+
