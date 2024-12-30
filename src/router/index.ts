@@ -6,9 +6,6 @@ import NotFoundView from '@/views/NotFoundView.vue'
 import HomeView from '@/views/HomeView.vue'
 
 const router = createRouter({
-  end: undefined,
-  sensitive: undefined,
-  strict: undefined,
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -29,7 +26,7 @@ const router = createRouter({
     ,
     {
       path: '/posts/:id',
-      name: 'blog post',
+      name: 'blog-post',
       component: BlogPostView,
     },
     {
