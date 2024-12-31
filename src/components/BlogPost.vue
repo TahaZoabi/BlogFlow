@@ -6,17 +6,13 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from '@/components/ui/card'
 import { type BlogPostType } from '@/lib/posts.ts'
-import type { PropType } from 'vue'
 
-defineProps({
-  post: {
-    type: Object as PropType<BlogPostType>,
-    required: true,
-  },
-})
+defineProps<{
+  post: BlogPostType
+}>()
 </script>
 
 <template>

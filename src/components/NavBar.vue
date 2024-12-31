@@ -9,7 +9,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { Icon } from '@iconify/vue'
 import { useColorMode } from '@vueuse/core'
@@ -20,7 +20,7 @@ const mode = useColorMode()
 const navLinks = [
   { text: 'Home', path: '/' },
   { text: 'About', path: '/about' },
-  { text: 'Contact', path: '/contact' },
+  { text: 'Contact', path: '/contact' }
 ]
 </script>
 
@@ -35,11 +35,12 @@ const navLinks = [
     <!-- Desktop Navigation -->
     <nav class="absolute left-1/2 transform -translate-x-1/2">
       <ul class="md:flex justify-center items-center gap-5 hidden">
-        <li v-for="({ text, path }, index) in navLinks" :key="index">
+        <li v-for="{ text, path } of navLinks" :key="text">
           <RouterLink
             class="text-foreground hover:text-primary transition-colors duration-300"
             :to="path"
-            >{{ text }}</RouterLink
+          >{{ text }}
+          </RouterLink
           >
         </li>
       </ul>
@@ -64,9 +65,9 @@ const navLinks = [
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem @click="mode = 'light'"> Light </DropdownMenuItem>
-        <DropdownMenuItem @click="mode = 'dark'"> Dark </DropdownMenuItem>
-        <DropdownMenuItem @click="mode = 'auto'"> System </DropdownMenuItem>
+        <DropdownMenuItem @click="mode = 'light'"> Light</DropdownMenuItem>
+        <DropdownMenuItem @click="mode = 'dark'"> Dark</DropdownMenuItem>
+        <DropdownMenuItem @click="mode = 'auto'"> System</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
 
@@ -82,7 +83,7 @@ const navLinks = [
         <!-- DialogTitle -->
         <DialogTitle></DialogTitle>
         <!-- DialogDescription -->
-        <DialogDescription> </DialogDescription>
+        <DialogDescription></DialogDescription>
 
         <!-- Navigation Links -->
         <ul class="flex flex-col justify-center items-center gap-5">
@@ -90,7 +91,8 @@ const navLinks = [
             <RouterLink
               class="text-foreground hover:text-primary transition-colors duration-300"
               :to="path"
-              >{{ text }}</RouterLink
+            >{{ text }}
+            </RouterLink
             >
           </li>
         </ul>
