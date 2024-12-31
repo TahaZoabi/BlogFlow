@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer Component > should render correctly 1`] = `
+"<footer class="flex flex-col items-center justify-center gap-4">
+  <h5 class="text-md sm:text-lg">© 2024 Taha Zoabi. All Rights Reserved.</h5>
+</footer>"
+`;
